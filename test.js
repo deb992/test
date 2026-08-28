@@ -91,6 +91,9 @@ t(await h.locator('.marquee__track > .marquee__group').count()===2,'marquee grou
 
 // ember canvas actually painting
 t(await h.evaluate(()=>{const c=document.getElementById('emberCanvas');
+  const hero=document.querySelector('.hero');
+  return c.clientWidth>=hero.clientWidth-2 && c.clientHeight>=hero.clientHeight-2;}),'ember canvas fills the hero');
+t(await h.evaluate(()=>{const c=document.getElementById('emberCanvas');
   const d=c.getContext('2d').getImageData(0,0,c.width,c.height).data;
   for(let i=3;i<d.length;i+=4000) if(d[i]>0) return true; return false;}),'ember canvas is rendering particles');
 

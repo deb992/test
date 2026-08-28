@@ -312,7 +312,9 @@ section{position:relative}
   mix-blend-mode:normal;
 }
 #emberCanvas{
-  position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:.85;
+  /* canvas is a replaced element: inset:0 alone leaves it at its intrinsic
+     300x150, so the particle field must be sized explicitly. */
+  position:absolute;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;opacity:.85;
   -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.3) 16%,#000 46%);
   mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.3) 16%,#000 46%);
 }
