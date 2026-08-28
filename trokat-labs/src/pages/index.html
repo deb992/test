@@ -1,56 +1,40 @@
 <!--
 title: TroKat Labs — Practical Software. Real Solutions. Built for Life.
-description: TroKat Labs builds practical software for everyday life — nine apps across daily living, business operations and travel — plus custom sites and apps for small businesses. Born from rebuilding independence after a brain injury.
+description: Nine apps sharing one core — networking, inventory, travel, the web and more — plus custom websites, apps and internal tools built for small businesses.
 og: og-default.jpg
 body_class: page-home
 -->
 
-<section class="hero">
+<section class="hero hero--hub">
   <div class="gridlines" aria-hidden="true"></div>
-  <div class="wrap hero__grid">
-    <div>
-      <p class="tag" data-reveal>Software studio &middot; Bucks County, PA</p>
-      <h1 class="d1" data-reveal data-d="1">Practical software, <span class="grad">built for real life.</span></h1>
+  <div class="wrap hub">
+    <div class="hub__head">
+      <h1 class="d1" data-reveal data-d="1">The whole <span class="grad">TroKat family.</span></h1>
       <p class="lede" data-reveal data-d="2">
-        {{APP_COUNT}} apps and counting &mdash; daily living, business operations, travel, the web.
-        Every one of them started with a real person and a real problem, not a market.
+        {{APP_COUNT}} apps, one shared core, one account. Pick the one you need &mdash;
+        or have us build you something of your own.
       </p>
-      <div class="hero__actions" data-reveal data-d="3">
-        <a class="btn" href="apps.html">
-          See the apps
-          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a class="btn btn-ghost" href="studio.html">Have us build yours</a>
-      </div>
-      <ul class="stats" data-reveal data-d="4">
-        <li><b>{{APP_COUNT}}</b><span>Apps in the family</span></li>
-        <li><b>1</b><span>Shared core</span></li>
-        <li><b>&lt;1 day</b><span>We answer everything</span></li>
-      </ul>
     </div>
 
-    <div class="orbit" data-orbit="{{ORBIT}}" data-reveal data-d="2">
-      <canvas aria-hidden="true"></canvas>
-      <img class="orbit__core" src="/assets/apps/web/trokat-labs-orb.png"
-           alt="TroKat Labs" width="512" height="512">
-      <div class="orbit__card" role="status" aria-live="polite">
-        <b></b><span></span>
-      </div>
+    {{HUB}}
     </div>
+
+    <p class="hub__hint" data-reveal data-d="3">
+      <span aria-hidden="true">&#9679;</span> Click any app to open it
+    </p>
   </div>
 </section>
 
-<!-- THE FAMILY -->
-<section class="section" id="apps">
+<!-- Every app, one tap away. Also the keyboard and no-JS path to the orbit above. -->
+<section class="section" id="apps" style="padding-top:clamp(2.5rem,5vw,4rem)">
   <div class="wrap">
-    <div class="grid g2" style="align-items:end;margin-bottom:clamp(2rem,4vw,3rem)">
+    <div class="grid g2" style="align-items:end;margin-bottom:clamp(1.6rem,3vw,2.4rem)">
       <div>
-        <p class="tag" data-reveal>The family</p>
-        <h2 class="d2" style="margin-top:1.1rem" data-reveal>One core. <span class="grad">{{APP_COUNT}} tools.</span></h2>
+        <p class="tag" data-reveal>Every app</p>
+        <h2 class="d2" style="margin-top:1rem" data-reveal>Tap any one to open it.</h2>
       </div>
       <p class="lede" data-reveal data-d="1" style="justify-self:start">
-        They share an engine, a design language and a single account. Learn one and
-        you already know the rest.
+        They share an engine and a design language, so learning one teaches you the rest.
       </p>
     </div>
     <div class="apps">
@@ -59,60 +43,27 @@ body_class: page-home
   </div>
 </section>
 
-<!-- ORIGIN -->
-<section class="section" style="background:var(--void-2);border-block:1px solid var(--line)">
-  <div class="wrap grid g2" style="gap:clamp(2rem,5vw,4.5rem);align-items:center">
+<!-- Studio, in one strip rather than a page of scrolling -->
+<section class="section" style="background:var(--void-2);border-block:1px solid var(--line);padding-block:clamp(3rem,6vw,5rem)">
+  <div class="wrap grid g2" style="gap:clamp(1.6rem,4vw,4rem);align-items:center">
     <div>
-      <p class="tag amber" data-reveal>Why we exist</p>
-      <h2 class="d2" style="margin:1.1rem 0 1.4rem" data-reveal>
-        It started with one person <span class="grad-amber">getting their day back.</span>
-      </h2>
+      <p class="tag amber" data-reveal>Work with us</p>
+      <h2 class="d2" style="margin:1rem 0 1rem" data-reveal>We build for other people too.</h2>
       <p class="lede" data-reveal data-d="1">
-        TroKat Labs was built around a hard problem: how do you hold a day together after a
-        traumatic brain injury &mdash; the appointments, the medications, the routine, the
-        confidence &mdash; without depending on somebody else for every step?
+        Websites you actually own, custom apps, and the internal tools nobody else wants to
+        build. Same team, same engine, a small number of projects at a time.
       </p>
-      <p class="muted" style="margin-top:1.1rem;max-width:58ch" data-reveal data-d="2">
-        The first app existed because it had to. Everything since has been built the same
-        way: start with a real person, a real challenge, and a genuine desire to make life a
-        little better. That is still the whole test a TroKat product has to pass.
-      </p>
-      <div class="hero__actions" data-reveal data-d="3">
-        <a class="btn btn-ghost" href="about.html">
-          Read the story
+      <div class="hero__actions" data-reveal data-d="2">
+        <a class="btn" href="studio.html">
+          What we take on
           <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <a class="btn btn-ghost" href="contact.html">Start a project</a>
       </div>
     </div>
     <div class="panel" data-reveal data-d="1">
       <p class="quote-lg">&ldquo;Every solution we build begins with a real person, a real challenge, and a genuine desire to make life a little better.&rdquo;</p>
-      <p class="tag bare" style="margin-top:1.5rem;color:var(--steel-dim)">TroKat Labs &middot; Our philosophy</p>
-    </div>
-  </div>
-</section>
-
-<!-- STUDIO -->
-<section class="section">
-  <div class="wrap">
-    <div style="max-width:56ch;margin-bottom:clamp(2rem,4vw,3rem)">
-      <p class="tag" data-reveal>Work with us</p>
-      <h2 class="d2" style="margin:1.1rem 0 1.2rem" data-reveal>We build for other people too.</h2>
-      <p class="lede" data-reveal data-d="1">
-        The same team that ships the TroKat apps takes on a small number of outside
-        projects &mdash; websites, apps, and the unglamorous internal tools nobody else wants.
-      </p>
-    </div>
-    <div class="steps">
-      <article class="step" data-reveal><span class="n">01</span><h3>We listen first</h3><p>One conversation about the actual problem. No discovery invoice, no deck, no jargon.</p></article>
-      <article class="step" data-reveal data-d="1"><span class="n">02</span><h3>You see it early</h3><p>A working thing in front of you fast, so you are reacting to something real instead of a description.</p></article>
-      <article class="step" data-reveal data-d="2"><span class="n">03</span><h3>Built to be owned</h3><p>You get the files. No platform lock-in, no monthly fee for the privilege of having a website.</p></article>
-      <article class="step" data-reveal data-d="3"><span class="n">04</span><h3>We stay reachable</h3><p>The person who built it is the person who answers when you need a change.</p></article>
-    </div>
-    <div class="hero__actions" data-reveal data-d="1">
-      <a class="btn btn-ghost" href="studio.html">
-        What we take on
-        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+      <p class="tag bare" style="margin-top:1.3rem;color:var(--steel-dim)">TroKat Labs &middot; Our philosophy</p>
     </div>
   </div>
 </section>
@@ -121,11 +72,7 @@ body_class: page-home
   <div class="wrap cta__in">
     <p class="tag" data-reveal>Get in touch</p>
     <h2 class="d2" data-reveal>Tell us what you are trying to solve.</h2>
-    <p class="lede" data-reveal data-d="1">
-      Whether it is one of our apps or something you need built, the reply comes from a
-      person &mdash; usually the same day.
-    </p>
-    <div class="hero__actions" data-reveal data-d="2">
+    <div class="hero__actions" data-reveal data-d="1">
       <a class="btn" href="contact.html">
         Start a conversation
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>

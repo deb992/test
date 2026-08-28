@@ -347,3 +347,64 @@ p{text-wrap:pretty}
 .app-row--flip .wrap{direction:rtl}
 .app-row--flip .wrap>*{direction:ltr}
 @media (max-width:900px){.app-row--flip .wrap{direction:ltr}.app-row__art img{width:min(72%,240px)}}
+
+/* ---------- hub hero: the ecosystem is the navigation ----------
+   Everything above the orbit is deliberately small. The orbit is the page. */
+.hero--hub{align-content:center;padding-block:clamp(5rem,7.5vw,6rem) clamp(1.2rem,2.5vw,2rem)}
+.hub{display:grid;justify-items:center;text-align:center;gap:clamp(.5rem,1.2vw,1rem)}
+.hub__head{display:grid;justify-items:center;gap:.45rem;max-width:60ch}
+.hub__head h1{font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.03;letter-spacing:-.03em;max-width:20ch}
+.hub__head .lede{font-size:clamp(.86rem,1.15vw,.98rem);line-height:1.45;max-width:56ch}
+.hub .orbit{max-width:min(58vh,620px);margin-block:clamp(-.5rem,-1vw,0rem)}
+.hub__hint{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-dim);
+  display:inline-flex;align-items:center;gap:.6em;justify-self:center;margin-top:.4rem}
+.hub__hint span{color:var(--cyan);font-size:.55em}
+@media (max-width:560px){.hub .orbit{max-width:100%}.hub__hint{letter-spacing:.1em}}
+
+/* ---------- hub map: TroKat Labs at the centre, every app on a spoke ---------- */
+.hubmap{
+  position:relative;display:grid;width:100%;
+  grid-template-columns:1fr minmax(200px,264px) 1fr;
+  gap:clamp(.8rem,2vw,2.2rem);align-items:center;
+}
+.hubmap__wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
+.hubmap__col{display:grid;gap:clamp(.5rem,.9vw,.75rem);position:relative;z-index:1}
+
+.hubmap__core{
+  position:relative;z-index:2;display:grid;justify-items:center;text-align:center;gap:.7rem;
+  padding:clamp(1rem,1.8vw,1.6rem);
+  border:1px solid color-mix(in srgb,var(--cyan) 34%,transparent);border-radius:50%;
+  aspect-ratio:1;align-content:center;
+  background:radial-gradient(70% 70% at 50% 45%,color-mix(in srgb,var(--blue-deep) 42%,transparent),var(--void-2) 78%);
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--cyan) 12%,transparent),0 0 70px -10px color-mix(in srgb,var(--cyan) 45%,transparent);
+}
+.hubmap__core img{width:clamp(52px,5.4vw,76px);height:auto}
+.hubmap__core b{font-family:var(--display);font-size:clamp(1rem,1.6vw,1.35rem);font-weight:700;letter-spacing:-.03em;line-height:1}
+.hubmap__core span{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);line-height:1.8}
+
+.node{
+  position:relative;z-index:1;display:grid;grid-template-columns:auto 1fr;gap:.7rem;align-items:center;
+  padding:.62rem .8rem;border:1px solid var(--line);border-radius:9px;background:var(--void-2);
+  transition:border-color .35s var(--ease),background .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease);
+}
+.node:hover{border-color:color-mix(in srgb,var(--cyan) 55%,transparent);background:var(--panel);
+  transform:translateY(-2px);box-shadow:0 14px 40px -18px color-mix(in srgb,var(--cyan) 60%,transparent)}
+.node--r{grid-template-columns:1fr auto;text-align:right}
+.node--r .node__mark{order:2}
+.node__mark{width:clamp(34px,3vw,42px);height:auto;flex:none;transition:transform .4s var(--ease)}
+.node:hover .node__mark{transform:scale(1.08)}
+.node__body{display:grid;gap:.12rem;min-width:0}
+.node__kicker{font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-dim)}
+.node__name{font-family:var(--display);font-size:.94rem;font-weight:700;letter-spacing:-.02em;color:var(--cyan);line-height:1.1}
+.node__desc{font-size:.75rem;line-height:1.4;color:var(--steel);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+@media (max-width:1080px){
+  .hubmap{grid-template-columns:1fr;gap:1rem}
+  .hubmap__wires{display:none}
+  .hubmap__core{border-radius:16px;aspect-ratio:auto;order:-1;padding:1.6rem}
+  .hubmap__col{gap:.7rem}
+  .node,.node--r{grid-template-columns:auto 1fr;text-align:left}
+  .node--r .node__mark{order:0}
+  .node__desc{-webkit-line-clamp:2}
+}

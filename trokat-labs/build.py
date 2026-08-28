@@ -68,6 +68,11 @@ APPS = [
         "verified": False,
     },
     {
+        "slug": "voice", "name": "TroKat Voice", "short": "Voice",
+        "blurb": "Hands-free control for the things you do every day — ask for it out loud instead of hunting for the screen.",
+        "verified": False,
+    },
+    {
         "slug": "webs", "name": "TroKat Webs", "short": "Webs",
         "blurb": "Fast, owned websites for small businesses — built properly and hosted without a monthly platform fee.",
         "verified": False,
@@ -75,11 +80,6 @@ APPS = [
     {
         "slug": "mailer", "name": "TroKat Mailers", "short": "Mailers",
         "blurb": "Mailing and campaign management. Build the list, send the message, see what actually landed.",
-        "verified": False,
-    },
-    {
-        "slug": "voice", "name": "TroKat Voice", "short": "Voice",
-        "blurb": "Daily-living support for people with cognitive challenges — routine, reminders and reassurance, in a voice that is easy to follow.",
         "verified": False,
     },
 ]
@@ -149,6 +149,41 @@ def app_sections():
     return "\n".join(out)
 
 
+def hub():
+    """The ecosystem diagram: TroKat Labs at the centre, every app on a spoke.
+    Split left/right so the labels stay readable at nine products."""
+    half = (len(APPS) + 1) // 2
+    left, right = APPS[:half], APPS[half:]
+
+    def card(a, side):
+        return f'''<a class="node node--{side}" href="apps.html#{a['slug']}" data-node="{a['slug']}">
+          <img class="node__mark" src="/assets/apps/web/trokat-{a['slug']}-orb.png"
+               alt="" width="256" height="256" loading="lazy">
+          <span class="node__body">
+            <span class="node__kicker">TroKat</span>
+            <span class="node__name">{a['short']}</span>
+            <span class="node__desc">{a['blurb']}</span>
+          </span>
+        </a>'''
+
+    l = "\n        ".join(card(a, "l") for a in left)
+    r = "\n        ".join(card(a, "r") for a in right)
+    return f'''<div class="hubmap" data-hubmap>
+      <svg class="hubmap__wires" aria-hidden="true"></svg>
+      <div class="hubmap__col hubmap__col--l">
+        {l}
+      </div>
+      <div class="hubmap__core" data-hubcore>
+        <img src="/assets/apps/web/trokat-labs-orb.png" alt="TroKat Labs" width="256" height="256" fetchpriority="high">
+        <b>TroKat <span class="grad">Labs</span></b>
+        <span>Practical software.<br>Real solutions.<br>Built for life.</span>
+      </div>
+      <div class="hubmap__col hubmap__col--r">
+        {r}
+      </div>
+    </div>'''
+
+
 def orbit_data():
     return json.dumps([
         {"name": a["short"], "blurb": a["blurb"],
@@ -183,6 +218,7 @@ def main():
             "PHONE": SITE["phone_display"], "PHONE_HREF": SITE["phone_href"],
             "EMAIL": SITE["email"], "ORIGIN": SITE["origin"], "TAGLINE": SITE["tagline"],
             "APP_CARDS": app_cards(), "ORBIT": orbit_data(), "APP_SECTIONS": app_sections(),
+            "HUB": hub(),
             "APP_COUNT": str(len(APPS)),
         }
         html = render(head, ctx) + render(header, ctx) + render(body, ctx) + render(footer, ctx)

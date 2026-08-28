@@ -48,6 +48,56 @@
     }
   }
 
+  /* ---- hub map: draw the spokes from the core to each app ---- */
+  var hubmap = $('[data-hubmap]');
+  if (hubmap) {
+    var wires = $('.hubmap__wires', hubmap);
+    var core = $('[data-hubcore]', hubmap);
+    var nodes = $$('.node', hubmap);
+    var NS = 'http://www.w3.org/2000/svg';
+
+    function draw() {
+      while (wires.firstChild) wires.removeChild(wires.firstChild);
+      if (window.innerWidth <= 1080) return;
+      var box = hubmap.getBoundingClientRect();
+      var c = core.getBoundingClientRect();
+      var cx = c.left - box.left + c.width / 2;
+      var cy = c.top - box.top + c.height / 2;
+      var cr = c.width / 2;
+      wires.setAttribute('viewBox', '0 0 ' + box.width + ' ' + box.height);
+
+      nodes.forEach(function (n, i) {
+        var r = n.getBoundingClientRect();
+        var right = n.classList.contains('node--r');
+        var nx = r.left - box.left + (right ? 0 : r.width);
+        var ny = r.top - box.top + r.height / 2;
+        // leave the core edge on the bearing of this node, not from its centre
+        var ang = Math.atan2(ny - cy, nx - cx);
+        var sx = cx + Math.cos(ang) * cr;
+        var sy = cy + Math.sin(ang) * cr;
+        var mx = (sx + nx) / 2;
+
+        var path = document.createElementNS(NS, 'path');
+        path.setAttribute('d', 'M' + sx + ',' + sy + ' C' + mx + ',' + sy + ' ' + mx + ',' + ny + ' ' + nx + ',' + ny);
+        path.setAttribute('fill', 'none');
+        path.setAttribute('stroke', i % 3 === 1 ? 'rgba(248,122,24,.34)' : 'rgba(59,200,255,.30)');
+        path.setAttribute('stroke-width', '1');
+        wires.appendChild(path);
+
+        var dot = document.createElementNS(NS, 'circle');
+        dot.setAttribute('r', '2.6');
+        dot.setAttribute('fill', i % 3 === 1 ? '#F87A18' : '#3BC8FF');
+        dot.setAttribute('cx', nx); dot.setAttribute('cy', ny);
+        wires.appendChild(dot);
+      });
+    }
+
+    draw();
+    window.addEventListener('resize', draw);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+    window.addEventListener('load', draw);
+  }
+
   /* ---- orbital ecosystem ---- */
   var stage = $('[data-orbit]');
   if (stage) {
