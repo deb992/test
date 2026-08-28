@@ -90,7 +90,7 @@ def inline_img(m):
     return f'src="{data_uri(p)}"' if p.exists() else m.group(0)
 
 
-page_html = re.sub(r'src="(/assets/img/[^"]+)"', inline_img, page_html)
+page_html = re.sub(r'src="(/assets/(?:img|brand)/[^"]+)"', inline_img, page_html)
 
 # preview-only: the form must not POST to a live endpoint from inside the artifact
 page_html = page_html.replace(' data-redirect="thank-you.html"', "")

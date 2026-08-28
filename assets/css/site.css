@@ -29,11 +29,18 @@
   --ember-4:#D92E1B;
   --brick:#7A2E1E;
 
+  /* brand — sampled from Junior's logo artwork */
+  --brand:#0078F0;        /* his exact wordmark blue */
+  --brand-lift:#4DA3FF;   /* 7.5:1 on soot — labels and links on dark */
+  --brand-deep:#0A5FBF;   /* 5.4:1 on bone — labels on light sections */
+  --chrome:#E8E8EA;       /* the silver in CHIMNEY */
+
   /* metal */
   --brass:#C9A25E;
   --brass-dim:#8A6F3E;
 
   --grad-ember:linear-gradient(100deg,var(--ember-1) 0%,var(--ember-2) 38%,var(--ember-3) 68%,var(--ember-4) 100%);
+  --grad-brand:linear-gradient(100deg,var(--brand-lift) 0%,var(--brand) 55%,#0A5FBF 100%);
   --grad-ember-v:linear-gradient(180deg,var(--ember-1),var(--ember-3) 55%,var(--ember-4));
 
   /* type */
@@ -106,11 +113,11 @@ p{text-wrap:pretty}
   font-family:var(--sans);
   font-size:.6875rem;font-weight:600;
   letter-spacing:.24em;text-transform:uppercase;
-  color:var(--brass);
+  color:var(--brand-lift);
   display:inline-flex;align-items:center;gap:.7em;
 }
 .eyebrow::before{
-  content:"";width:1.9rem;height:1px;background:var(--grad-ember);
+  content:"";width:1.9rem;height:1px;background:var(--grad-brand);
   flex:none;
 }
 .eyebrow.no-rule::before{display:none}
@@ -216,6 +223,12 @@ section{position:relative}
   padding-block:clamp(.9rem,1.6vw,1.35rem);
 }
 .brand{display:flex;align-items:center;gap:.75rem;flex:none}
+.brand__logo{
+  /* his wordmark sits inside the roofline, so it needs real height to read */
+  height:clamp(46px,4.8vw,64px);width:auto;
+  transition:filter .45s var(--ease),transform .45s var(--ease);
+}
+.brand:hover .brand__logo{filter:brightness(1.12) saturate(1.08)}
 .brand svg{width:46px;height:46px;color:var(--bone);transition:color .4s var(--ease);flex:none}
 .brand:hover svg{color:var(--ember-1)}
 .brand__type{display:flex;flex-direction:column;line-height:1}
@@ -223,7 +236,7 @@ section{position:relative}
   font-family:var(--display);font-size:1.42rem;font-weight:600;letter-spacing:-.022em;
   font-variation-settings:"SOFT" 20,"WONK" 1,"opsz" 60;white-space:nowrap;
 }
-.brand__sub{font-size:.5625rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brass);margin-top:.28em}
+.brand__sub{font-size:.5625rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brand-lift);margin-top:.28em}
 
 .nav{display:flex;align-items:center;gap:clamp(1.1rem,2.2vw,2.2rem)}
 .nav a{
@@ -294,7 +307,7 @@ section{position:relative}
   opacity:0;transform:translateY(22px);
 }
 .drawer.is-open nav a{opacity:1;transform:none;transition:opacity .55s var(--ease) var(--d,0s),transform .7s var(--ease) var(--d,0s)}
-.drawer nav a i{font-style:normal;font-family:var(--sans);font-size:.68rem;letter-spacing:.2em;color:var(--brass)}
+.drawer nav a i{font-style:normal;font-family:var(--sans);font-size:.68rem;letter-spacing:.2em;color:var(--brand-lift)}
 .drawer__foot{margin-top:2.6rem;display:grid;gap:1rem}
 
 /* ---------- 7. HERO ---------- */
@@ -324,22 +337,16 @@ section{position:relative}
 
 /* The lockup that tells a first-time visitor whose site this is. */
 .hero__brand{
-  display:flex;align-items:center;gap:clamp(.85rem,1.6vw,1.35rem);
-  margin-bottom:clamp(1.5rem,3vw,2.4rem);
+  display:grid;justify-items:start;gap:clamp(.7rem,1.4vw,1.1rem);
+  margin-bottom:clamp(1.6rem,3vw,2.6rem);
 }
-.hero__brand>svg{
-  width:clamp(54px,6.4vw,82px);height:auto;color:var(--bone);flex:none;
-}
-.hero__brand__type{display:grid;gap:.45rem;min-width:0}
-.hero__brand__name{
-  font-family:var(--display);font-weight:600;
-  font-size:clamp(1.7rem,3.6vw,2.9rem);line-height:.98;letter-spacing:-.028em;
-  font-variation-settings:"SOFT" 18,"WONK" 1,"opsz" 90;
-  color:var(--bone);
+.hero__brand__logo{
+  width:clamp(280px,38vw,580px);height:auto;
+  filter:drop-shadow(0 14px 48px rgba(0,120,240,.22));
 }
 .hero__brand__sub{
   font-size:clamp(.5625rem,.9vw,.6875rem);font-weight:600;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--brass);
+  letter-spacing:.22em;text-transform:uppercase;color:var(--brand-lift);
 }
 @media (max-width:560px){
   .hero__brand{gap:.8rem}
@@ -397,18 +404,18 @@ section{position:relative}
   font-style:italic;background:var(--grad-ember);
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.marquee__group i{width:6px;height:6px;border-radius:50%;background:var(--brass);flex:none;opacity:.6}
+.marquee__group i{width:6px;height:6px;border-radius:50%;background:var(--brand);flex:none;opacity:.75}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* ---------- 9. STATEMENT ---------- */
 .statement h2{max-width:19ch}
 .statement__meta{display:grid;gap:2.2rem;align-content:start}
 .spec{display:grid;gap:.5rem;padding-top:1.1rem;border-top:1px solid color-mix(in srgb,var(--bone) 13%,transparent)}
-.spec dt{font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.spec dt{font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-lift)}
 .spec dd{font-size:.98rem;color:color-mix(in srgb,var(--bone) 72%,transparent)}
 .on-bone .spec{border-top-color:color-mix(in srgb,var(--ink) 16%,transparent)}
 .on-bone .spec dd{color:color-mix(in srgb,var(--ink) 68%,transparent)}
-.on-bone .spec dt{color:var(--brick)}
+.on-bone .spec dt{color:var(--brand-deep)}
 
 /* ---------- 10. SERVICE PLATES ---------- */
 .plates{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:color-mix(in srgb,var(--bone) 12%,transparent);border:1px solid color-mix(in srgb,var(--bone) 12%,transparent)}
@@ -428,7 +435,7 @@ section{position:relative}
 .plate:hover::before{opacity:1}
 .plate__num{
   font-family:var(--display);font-size:.8rem;font-weight:600;letter-spacing:.12em;
-  color:var(--brass);font-variant-numeric:tabular-nums;
+  color:var(--brand-lift);font-variant-numeric:tabular-nums;
 }
 .plate__icon{width:34px;height:34px;color:var(--ember-2);margin-bottom:.3rem;transition:transform .6s var(--ease)}
 .plate:hover .plate__icon{transform:translateY(-3px) rotate(-4deg)}
@@ -452,9 +459,9 @@ section{position:relative}
 }
 .anatomy__stage svg{width:100%;height:auto;position:relative;z-index:1}
 .hotspot{cursor:pointer}
-.hotspot circle.ring{fill:none;stroke:var(--brass);stroke-width:1.2;opacity:.5;transition:opacity .4s,r .4s var(--ease)}
-.hotspot circle.dot{fill:var(--ember-2);transition:fill .35s}
-.hotspot:hover circle.ring,.hotspot.is-active circle.ring{opacity:1;stroke:var(--ember-2)}
+.hotspot circle.ring{fill:none;stroke:var(--brand-lift);stroke-width:1.2;opacity:.55;transition:opacity .4s,r .4s var(--ease)}
+.hotspot circle.dot{fill:var(--brand);transition:fill .35s}
+.hotspot:hover circle.ring,.hotspot.is-active circle.ring{opacity:1;stroke:var(--brand-lift)}
 .hotspot.is-active circle.dot{fill:var(--bone)}
 .hotspot text{
   font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.14em;
@@ -468,7 +475,7 @@ section{position:relative}
 .anatomy__item.is-active,.anatomy__item:hover{background:var(--soot-2);padding-left:1.6rem}
 .anatomy__item.is-active::before{transform:scaleY(1)}
 .anatomy__item h4{font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.3}
-.anatomy__item.is-active h4{color:var(--ember-1)}
+.anatomy__item.is-active h4{color:var(--brand-lift)}
 .anatomy__item p{font-size:.9rem;color:color-mix(in srgb,var(--bone) 58%,transparent);line-height:1.55;max-width:52ch}
 
 /* ---------- 12. PROCESS ---------- */
@@ -564,7 +571,7 @@ section{position:relative}
   padding:clamp(1.6rem,3.4vw,3rem);display:grid;gap:1.4rem;
 }
 .field{display:grid;gap:.55rem;position:relative}
-.field label{font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);font-weight:600}
+.field label{font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-lift);font-weight:600}
 .field .req{color:var(--ember-3)}
 .field input,.field textarea,.field select{
   width:100%;padding:.95rem 1.05rem;
@@ -574,7 +581,7 @@ section{position:relative}
   transition:border-color .35s var(--ease),background .35s var(--ease),box-shadow .35s var(--ease);
 }
 .field textarea{min-height:8.5rem;resize:vertical;line-height:1.6}
-.field select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%23C9A25E' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.05rem center}
+.field select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%234DA3FF' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.05rem center}
 .field select option{background:var(--soot-2);color:var(--bone)}
 .field input::placeholder,.field textarea::placeholder{color:color-mix(in srgb,var(--bone) 30%,transparent)}
 .field input:focus,.field textarea:focus,.field select:focus{
@@ -619,7 +626,7 @@ section{position:relative}
   transition:background .45s var(--ease);
 }
 .contact-rail a:hover{background:var(--soot-2)}
-.contact-rail dt,.contact-rail .k{font-size:.625rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:600}
+.contact-rail dt,.contact-rail .k{font-size:.625rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brand-lift);font-weight:600}
 .contact-rail .v{font-family:var(--display);font-size:clamp(1.15rem,1.9vw,1.5rem);font-weight:500;font-variation-settings:"SOFT" 14,"WONK" 0,"opsz" 60;line-height:1.2}
 .contact-rail .s{font-size:.85rem;color:var(--ash)}
 
@@ -628,7 +635,8 @@ section{position:relative}
 .footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:clamp(2rem,4vw,3.5rem)}
 @media (max-width:900px){.footer__grid{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.footer__grid{grid-template-columns:1fr}}
-.footer h4{font-family:var(--sans);font-size:.625rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin-bottom:1.2rem;font-weight:600}
+.footer .brand__logo{height:clamp(54px,6vw,76px)}
+.footer h4{font-family:var(--sans);font-size:.625rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brand-lift);margin-bottom:1.2rem;font-weight:600}
 .footer ul{display:grid;gap:.65rem}
 .footer li a,.footer address a{font-size:.92rem;color:color-mix(in srgb,var(--bone) 66%,transparent);transition:color .35s var(--ease)}
 .footer li a:hover,.footer address a:hover{color:var(--ember-1)}
@@ -740,7 +748,7 @@ section{position:relative}
 }
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{
-  content:"+";margin-left:auto;font-family:var(--sans);font-size:1.3rem;color:var(--brass);
+  content:"+";margin-left:auto;font-family:var(--sans);font-size:1.3rem;color:var(--brand-lift);
   transition:transform .45s var(--ease);flex:none;line-height:1;
 }
 .faq details[open] summary::after{transform:rotate(45deg)}
@@ -751,11 +759,11 @@ section{position:relative}
 .badge-row{display:flex;flex-wrap:wrap;gap:.6rem}
 .badge{
   display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .9rem;
-  border:1px solid color-mix(in srgb,var(--brass) 42%,transparent);
-  font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-weight:600;
+  border:1px solid color-mix(in srgb,var(--brand) 52%,transparent);
+  font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-lift);font-weight:600;
 }
 /* Brass reads as gold on soot but washes out on bone — go deep there (6.3:1). */
-.on-bone .badge{color:#6B5426;border-color:color-mix(in srgb,#6B5426 40%,transparent)}
+.on-bone .badge{color:var(--brand-deep);border-color:color-mix(in srgb,var(--brand-deep) 40%,transparent)}
 .badge svg{width:.95rem;height:.95rem}
 
 .skip{position:absolute;left:-9999px;top:0;z-index:9999;padding:1rem 1.4rem;background:var(--bone);color:var(--ink);font-weight:600}

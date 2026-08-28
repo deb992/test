@@ -1,5 +1,5 @@
 {
-  "name": "Junior's Chimney",
+  "name": "Junior's Chimney LLC",
   "short_name": "Junior's",
   "description": "Certified chimney sweeping, relining, repairs and masonry in Bucks County, PA.",
   "start_url": "/",
@@ -7,7 +7,7 @@
   "background_color": "#0B0B0D",
   "theme_color": "#0B0B0D",
   "icons": [
-    { "src": "/assets/brand/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/assets/brand/icon-512.png", "sizes": "512x512", "type": "image/png" },
     { "src": "/assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
   ]
 }

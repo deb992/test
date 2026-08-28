@@ -38,6 +38,14 @@ email address — it never fails silently.
 
 ### 2. Swap in Junior's real photographs
 
+**The logo is done.** `assets/brand/` now holds his real artwork:
+`logo-lockup.png` (roofline + wordmark, keyed transparent — used in the header,
+hero and footer), `logo-full.jpg` (the complete sign, used on the About page and
+as the link-preview image), plus favicons generated from it. The site palette was
+retuned around his brand blue (`#0078F0`, sampled from the artwork), with the
+ember orange kept for the fire moments — the same pairing his own logo uses.
+
+
 Every image in `assets/img/` is a generated placeholder with "REPLACE" written on it.
 Drop his real photos in **using the exact same filenames** and the site picks them up —
 no code changes.
