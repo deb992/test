@@ -1,0 +1,176 @@
+<!--
+title: Contact Junior's Chimney — Free Estimates, Bucks County PA
+description: Request a free chimney estimate or book an inspection with Junior's Chimney in Croydon, PA. Call (215) 526-3574, open seven days 8am-6pm, or send the form and Junior will call you back.
+og: og-contact.jpg
+body_class: page-contact
+-->
+
+<section class="pagehead">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb" data-reveal>
+      <a href="index.html">Home</a><span aria-hidden="true">/</span><span>Contact</span>
+    </nav>
+    <h1 class="d1" data-reveal>Let&rsquo;s get you <em class="accent">on the schedule.</em></h1>
+    <p class="lede" data-reveal data-reveal-delay="1">
+      Fill this in and it lands in Junior&rsquo;s inbox straight away. In a hurry? The phone is
+      always faster &mdash; he answers it himself, seven days a week.
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap grid g-12" style="gap:clamp(2rem,4vw,3.5rem);align-items:start">
+
+    <!-- FORM -->
+    <div style="grid-column:span 7">
+      <form class="form-shell" id="quoteForm"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            data-redirect="thank-you.html"
+            novalidate>
+
+        <!-- Web3Forms delivery key. Generate a free one at https://web3forms.com
+             using Junior's real inbox address, then paste it here. -->
+        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="from_name" value="Junior's Chimney website">
+        <input type="checkbox" class="hp" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div>
+          <p class="eyebrow no-rule">Request a free estimate</p>
+          <h2 class="d3" style="margin-top:.9rem">Tell us what it&rsquo;s doing.</h2>
+        </div>
+
+        <div class="grid g-2" style="gap:1.2rem">
+          <div class="field">
+            <label for="name">Your name <span class="req">*</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="First and last" required>
+            <span class="field__err"></span>
+          </div>
+          <div class="field">
+            <label for="phone">Phone <span class="req">*</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(215) 555-0100" required>
+            <span class="field__err"></span>
+          </div>
+        </div>
+
+        <div class="grid g-2" style="gap:1.2rem">
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <span class="field__err"></span>
+          </div>
+          <div class="field">
+            <label for="address">Property address <span class="req">*</span></label>
+            <input id="address" name="address" type="text" autocomplete="street-address" placeholder="Street and town" required>
+            <span class="field__err"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label id="svc-label">What do you need?</label>
+          <div class="chips" role="group" aria-labelledby="svc-label">
+            <label class="chip"><input type="checkbox" name="services" value="Chimney sweeping"><span>Chimney sweeping</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Chimney relining"><span>Relining</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Chimney repair"><span>Repair</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Certification / inspection"><span>Certification</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Dryer vent cleaning"><span>Dryer vent</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Masonry"><span>Masonry</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Not sure"><span>Not sure yet</span></label>
+          </div>
+        </div>
+
+        <div class="grid g-2" style="gap:1.2rem">
+          <div class="field">
+            <label for="timing">How soon?</label>
+            <select id="timing" name="timing">
+              <option value="Flexible — whenever suits">Flexible &mdash; whenever suits</option>
+              <option value="Within the next 2 weeks">Within the next 2 weeks</option>
+              <option value="This week if possible">This week if possible</option>
+              <option value="Urgent — settlement or safety concern">Urgent &mdash; settlement or safety concern</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="property">Property type</label>
+            <select id="property" name="property">
+              <option value="Single family home">Single family home</option>
+              <option value="Twin / townhouse">Twin / townhouse</option>
+              <option value="Multi-unit / rental">Multi-unit / rental</option>
+              <option value="Commercial">Commercial</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Anything else we should know?</label>
+          <textarea id="message" name="message" placeholder="Smoking back into the room, a stain on the ceiling, a settlement date, the last time it was swept — whatever you've got."></textarea>
+        </div>
+
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+
+        <button class="btn" type="submit" id="formSubmit" style="justify-self:start">
+          <span data-label>Send my request</span>
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <p class="form-note">
+          We only use your details to get back to you about this job. No lists, no sharing,
+          no marketing emails &mdash; ever.
+        </p>
+      </form>
+    </div>
+
+    <!-- RAIL -->
+    <aside style="grid-column:span 5;display:grid;gap:1.6rem;align-content:start">
+      <div class="contact-rail" data-reveal>
+        <a href="tel:{{PHONE_HREF}}">
+          <span class="k">Call &mdash; fastest</span>
+          <span class="v">{{PHONE}}</span>
+          <span class="s">Junior answers his own phone</span>
+        </a>
+        <a href="mailto:{{EMAIL}}">
+          <span class="k">Email</span>
+          <span class="v" style="font-size:1.05rem;font-family:var(--sans)">{{EMAIL}}</span>
+          <span class="s">Usually answered same day</span>
+        </a>
+        <div>
+          <span class="k">Hours</span>
+          <span class="v" style="font-size:1.15rem">8:00am &ndash; 6:00pm</span>
+          <span class="s">Seven days a week, weekends included</span>
+        </div>
+        <div>
+          <span class="k">Based in</span>
+          <span class="v" style="font-size:1.15rem">{{STREET}}</span>
+          <span class="s">{{CITY}}, {{REGION}} {{ZIP}} &middot; serving all of Bucks County</span>
+        </div>
+      </div>
+
+      <div style="border:1px solid color-mix(in srgb,var(--brass) 34%,transparent);padding:1.5rem" data-reveal data-reveal-delay="1">
+        <p class="eyebrow no-rule" style="margin-bottom:.8rem">Settlement coming up?</p>
+        <p style="font-size:.94rem;color:color-mix(in srgb,var(--bone) 72%,transparent)">
+          Say so in the message and put your closing date in. Chimney certifications get
+          moved to the front of the schedule &mdash; we know your date is not negotiable.
+        </p>
+      </div>
+
+      <div data-reveal data-reveal-delay="2">
+        <p class="eyebrow no-rule" style="margin-bottom:1rem">Serving</p>
+        <ul class="towns">
+          <li>Croydon</li><li>Bristol</li><li>Levittown</li><li>Bensalem</li><li>Langhorne</li>
+          <li>Yardley</li><li>Newtown</li><li>Morrisville</li><li>Fairless Hills</li>
+          <li>Feasterville</li><li>Trevose</li><li>Southampton</li><li>Doylestown</li>
+          <li>&amp; the rest of Bucks County</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band__inner">
+    <p class="eyebrow" data-reveal>Rather just talk?</p>
+    <h2 class="d2" data-reveal>Call {{PHONE}}. <em class="accent">He&rsquo;ll pick up.</em></h2>
+    <div class="hero__actions" data-reveal data-reveal-delay="1">
+      <a class="btn" href="tel:{{PHONE_HREF}}">Call now</a>
+    </div>
+  </div>
+</section>

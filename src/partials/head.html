@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<link rel="canonical" href="{{CANONICAL}}">
+<meta name="theme-color" content="#0B0B0D">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Junior's Chimney">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESC}}">
+<meta property="og:url" content="{{CANONICAL}}">
+<meta property="og:image" content="{{OG_IMAGE}}">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "additionalType": "https://schema.org/ProfessionalService",
+  "@id": "{{ORIGIN}}/#business",
+  "name": "Junior's Chimney",
+  "url": "{{ORIGIN}}/",
+  "telephone": "{{PHONE}}",
+  "email": "{{EMAIL}}",
+  "image": "{{ORIGIN}}/assets/img/og-default.jpg",
+  "logo": "{{ORIGIN}}/assets/brand/logo-mark.svg",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{STREET}}",
+    "addressLocality": "{{CITY}}",
+    "addressRegion": "{{REGION}}",
+    "postalCode": "{{ZIP}}",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }],
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Bucks County, Pennsylvania" },
+    { "@type": "City", "name": "Croydon" }, { "@type": "City", "name": "Bristol" },
+    { "@type": "City", "name": "Levittown" }, { "@type": "City", "name": "Bensalem" },
+    { "@type": "City", "name": "Langhorne" }, { "@type": "City", "name": "Yardley" },
+    { "@type": "City", "name": "Newtown" }, { "@type": "City", "name": "Morrisville" }
+  ],
+  "sameAs": ["{{FACEBOOK}}"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Chimney & masonry services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chimney sweeping & inspection" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chimney relining" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chimney repairs" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chimney certifications" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dryer vent cleaning" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Masonry" } }
+    ]
+  }
+}
+</script>
+</head>
+<body class="{{BODY_CLASS}}">
+<a class="skip" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="flue" aria-hidden="true"><i></i></div>
