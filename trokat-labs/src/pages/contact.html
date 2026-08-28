@@ -1,0 +1,109 @@
+<!--
+title: Contact TroKat Labs
+description: Talk to TroKat Labs about an app, a website, or a custom build. Email deb@trokatlabs.com or call 267-251-7056 — we answer everything within a business day.
+og: og-contact.jpg
+body_class: page-contact
+-->
+
+<section class="pagehead">
+  <div class="gridlines" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb" data-reveal><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Contact</span></nav>
+    <h1 class="d1" data-reveal>Let&rsquo;s talk.</h1>
+    <p class="lede" data-reveal data-d="1">
+      One person reads every message that comes through here, and answers it within a
+      business day &mdash; usually the same one.
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap grid" style="grid-template-columns:1.25fr .75fr;gap:clamp(2rem,4vw,3.5rem);align-items:start">
+    <form class="panel form" id="contactForm"
+          action="https://api.web3forms.com/submit" method="POST"
+          data-redirect="thank-you.html" novalidate>
+      <!-- Web3Forms delivery key. Generate a free one at https://web3forms.com
+           using deb@trokatlabs.com, then paste it here. -->
+      <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="from_name" value="TroKat Labs website">
+      <input type="checkbox" class="hp" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div>
+        <p class="tag bare">Send a message</p>
+        <h2 class="d3" style="margin-top:.7rem">What are you trying to solve?</h2>
+      </div>
+
+      <div class="grid g2" style="gap:1.1rem">
+        <div class="field">
+          <label for="name">Name <span class="req">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="First and last" required>
+          <span class="field__msg"></span>
+        </div>
+        <div class="field">
+          <label for="email">Email <span class="req">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <span class="field__msg"></span>
+        </div>
+      </div>
+
+      <div class="grid g2" style="gap:1.1rem">
+        <div class="field">
+          <label for="company">Company <span class="dim">(optional)</span></label>
+          <input id="company" name="company" type="text" autocomplete="organization" placeholder="If there is one">
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span class="dim">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(267) 555-0100">
+        </div>
+      </div>
+
+      <div class="field">
+        <label id="int-label">What is this about?</label>
+        <div class="chips" role="group" aria-labelledby="int-label">
+          <label class="chipbox"><input type="checkbox" name="interest" value="A website"><span>A website</span></label>
+          <label class="chipbox"><input type="checkbox" name="interest" value="A custom app"><span>A custom app</span></label>
+          <label class="chipbox"><input type="checkbox" name="interest" value="An internal tool"><span>Internal tool</span></label>
+          <label class="chipbox"><input type="checkbox" name="interest" value="One of the TroKat apps"><span>A TroKat app</span></label>
+          <label class="chipbox"><input type="checkbox" name="interest" value="Partnership or investment"><span>Partnership</span></label>
+          <label class="chipbox"><input type="checkbox" name="interest" value="Something else"><span>Something else</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">Tell us about it <span class="req">*</span></label>
+        <textarea id="message" name="message" required placeholder="What is broken, who it affects, and roughly when you need it. Plain language is fine — better, actually."></textarea>
+        <span class="field__msg"></span>
+      </div>
+
+      <div class="status" id="formStatus" role="status" aria-live="polite"></div>
+
+      <button class="btn" type="submit" id="formSubmit" style="justify-self:start">
+        <span data-label>Send message</span>
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <p class="dim" style="font-size:.82rem">
+        We use your details to reply to you and nothing else. No lists, no sharing, no marketing.
+      </p>
+    </form>
+
+    <aside style="display:grid;gap:1rem;align-content:start">
+      <div class="panel" data-reveal>
+        <p class="tag bare" style="margin-bottom:.9rem">Direct</p>
+        <p style="display:grid;gap:.8rem">
+          <a class="link" href="mailto:{{EMAIL}}" style="font-size:1.05rem">{{EMAIL}}</a>
+          <a class="link" href="tel:{{PHONE_HREF}}" style="font-size:1.05rem">{{PHONE}}</a>
+          <span class="dim" style="font-size:.9rem">Bucks County, Pennsylvania</span>
+        </p>
+      </div>
+      <div class="panel" data-reveal data-d="1">
+        <p class="tag amber bare" style="margin-bottom:.8rem">Response time</p>
+        <p class="muted" style="font-size:.94rem">Everything gets a reply within one business day. If it is urgent, call &mdash; the number above reaches a person, not a queue.</p>
+      </div>
+      <div class="panel" data-reveal data-d="2">
+        <p class="tag bare" style="margin-bottom:.8rem">Already using an app?</p>
+        <p class="muted" style="font-size:.94rem">Say which one in the message and we will route it straight to whoever works on it.</p>
+      </div>
+    </aside>
+  </div>
+</section>

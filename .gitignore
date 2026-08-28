@@ -7,3 +7,5 @@ package-lock.json
 
 # generated deliverables — rebuild with `python3 tools/bundle_artifact.py`
 dist/
+trokat-labs/dist/
+trokat-labs/node_modules

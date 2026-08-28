@@ -1,0 +1,34 @@
+
+<header class="masthead">
+  <div class="wrap masthead__in">
+    <a class="brand" href="index.html" aria-label="TroKat Labs — home">
+      <img src="/assets/brand/logo-header.webp" alt="TroKat Labs" width="851" height="300">
+    </a>
+    <nav class="nav" aria-label="Primary">
+          {{NAV}}
+    </nav>
+    <div class="masthead__cta">
+      <a class="btn" href="contact.html">
+        Start a project
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <div class="wrap">
+    <nav aria-label="Mobile">
+          {{NAV_MOBILE}}
+    </nav>
+    <div style="margin-top:2.4rem;display:grid;gap:1rem;justify-items:start">
+      <a class="btn" href="contact.html">Start a project</a>
+      <a class="link" href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
