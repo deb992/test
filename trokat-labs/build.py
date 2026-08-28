@@ -26,6 +26,13 @@ SITE = {
     "motto": ["Innovate", "Build", "Explore", "Inspire"],
 }
 
+# CoreX is not one of the eight — it is the engine they all run on, so it sits
+# inside the hub rather than on a spoke.
+CORE = {
+    "name": "CoreX",
+    "blurb": "The shared core every TroKat app runs on — accounts, data and integrations in one place.",
+}
+
 NAV = [
     ("index.html", "Home"),
     ("apps.html", "Apps"),
@@ -38,9 +45,9 @@ NAV = [
 # everything else is a draft written from the app mark and needs Deb's words.
 APPS = [
     {
-        "slug": "corex", "name": "TroKat CoreX", "short": "CoreX",
-        "blurb": "The shared core the other apps are built on — accounts, data and integrations in one place.",
-        "verified": False,
+        "slug": "travelers", "name": "TroKat Travelers", "short": "Travelers",
+        "blurb": "Travel planning that organizes itineraries, maps, restaurants, notes, and everything you need for the perfect trip.",
+        "verified": True,
     },
     {
         "slug": "networking", "name": "TroKat Networking", "short": "Networking",
@@ -48,19 +55,14 @@ APPS = [
         "verified": True,
     },
     {
+        "slug": "voice", "name": "TroKat Voice", "short": "Voice",
+        "blurb": "Hands-free control for the things you do every day — ask for it out loud instead of hunting for the screen.",
+        "verified": False,
+    },
+    {
         "slug": "inventory", "name": "TroKat Inventory", "short": "Inventory",
         "blurb": "Inventory and order management made easy. Track products, manage orders, monitor stock, and streamline your business operations.",
         "verified": True,
-    },
-    {
-        "slug": "travelers", "name": "TroKat Travelers", "short": "Travelers",
-        "blurb": "AI-assisted travel planning that organizes itineraries, maps, restaurants, notes, and everything you need for the perfect trip.",
-        "verified": True,
-    },
-    {
-        "slug": "globe", "name": "TroKat Globe", "short": "Globe",
-        "blurb": "An interactive world map that clusters pins, photos and notes. Drop a pin anywhere and everything you saved there comes with it.",
-        "verified": False,
     },
     {
         "slug": "openhouse", "name": "TroKat OpenHouse", "short": "OpenHouse",
@@ -68,18 +70,18 @@ APPS = [
         "verified": False,
     },
     {
-        "slug": "voice", "name": "TroKat Voice", "short": "Voice",
-        "blurb": "Hands-free control for the things you do every day — ask for it out loud instead of hunting for the screen.",
-        "verified": False,
-    },
-    {
-        "slug": "webs", "name": "TroKat Webs", "short": "Webs",
-        "blurb": "Fast, owned websites for small businesses — built properly and hosted without a monthly platform fee.",
+        "slug": "globe", "name": "TroKat Globe", "short": "Globe",
+        "blurb": "An interactive world map that clusters pins, photos and notes. Drop a pin anywhere and everything you saved there comes with it.",
         "verified": False,
     },
     {
         "slug": "mailer", "name": "TroKat Mailers", "short": "Mailers",
         "blurb": "Mailing and campaign management. Build the list, send the message, see what actually landed.",
+        "verified": False,
+    },
+    {
+        "slug": "webs", "name": "TroKat Webs", "short": "Webs",
+        "blurb": "Fast, owned websites for small businesses — built properly and hosted without a monthly platform fee.",
         "verified": False,
     },
 ]
@@ -177,6 +179,7 @@ def hub():
         <img src="/assets/apps/web/trokat-labs-orb.png" alt="TroKat Labs" width="256" height="256" fetchpriority="high">
         <b>TroKat <span class="grad">Labs</span></b>
         <span>Practical software.<br>Real solutions.<br>Built for life.</span>
+        <em class="hubmap__core-x">Powered by <b>CoreX</b></em>
       </div>
       <div class="hubmap__col hubmap__col--r">
         {r}

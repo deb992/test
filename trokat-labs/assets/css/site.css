@@ -408,3 +408,16 @@ p{text-wrap:pretty}
   .node--r .node__mark{order:0}
   .node__desc{-webkit-line-clamp:2}
 }
+
+/* CoreX sits in the hub, not on a spoke — it is what the eight run on */
+.hubmap__core-x{
+  font-style:normal;font-family:var(--mono);font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--steel-dim);margin-top:.15rem;
+}
+.hubmap__core-x b{font-family:var(--mono);font-size:inherit;font-weight:700;color:var(--amber-hot);letter-spacing:.16em}
+
+/* the bulbs carry the brand — give them real size */
+.node__mark{width:clamp(52px,4.6vw,66px)}
+.node{gap:.85rem;padding:.7rem .85rem}
+.node__desc{-webkit-line-clamp:3}
+@media (max-width:1080px){.node__mark{width:56px}.node__desc{-webkit-line-clamp:2}}
