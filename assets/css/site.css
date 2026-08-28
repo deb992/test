@@ -216,12 +216,12 @@ section{position:relative}
   padding-block:clamp(.9rem,1.6vw,1.35rem);
 }
 .brand{display:flex;align-items:center;gap:.75rem;flex:none}
-.brand svg{width:38px;height:38px;color:var(--bone);transition:color .4s var(--ease)}
+.brand svg{width:46px;height:46px;color:var(--bone);transition:color .4s var(--ease);flex:none}
 .brand:hover svg{color:var(--ember-1)}
 .brand__type{display:flex;flex-direction:column;line-height:1}
 .brand__name{
-  font-family:var(--display);font-size:1.16rem;font-weight:600;letter-spacing:-.02em;
-  font-variation-settings:"SOFT" 20,"WONK" 1,"opsz" 60;
+  font-family:var(--display);font-size:1.42rem;font-weight:600;letter-spacing:-.022em;
+  font-variation-settings:"SOFT" 20,"WONK" 1,"opsz" 60;white-space:nowrap;
 }
 .brand__sub{font-size:.5625rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brass);margin-top:.28em}
 
@@ -321,6 +321,30 @@ section{position:relative}
 
 .hero__inner{width:100%}
 .hero__eyebrow{margin-bottom:clamp(1.2rem,2.4vw,2rem)}
+
+/* The lockup that tells a first-time visitor whose site this is. */
+.hero__brand{
+  display:flex;align-items:center;gap:clamp(.85rem,1.6vw,1.35rem);
+  margin-bottom:clamp(1.5rem,3vw,2.4rem);
+}
+.hero__brand>svg{
+  width:clamp(54px,6.4vw,82px);height:auto;color:var(--bone);flex:none;
+}
+.hero__brand__type{display:grid;gap:.45rem;min-width:0}
+.hero__brand__name{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(1.7rem,3.6vw,2.9rem);line-height:.98;letter-spacing:-.028em;
+  font-variation-settings:"SOFT" 18,"WONK" 1,"opsz" 90;
+  color:var(--bone);
+}
+.hero__brand__sub{
+  font-size:clamp(.5625rem,.9vw,.6875rem);font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--brass);
+}
+@media (max-width:560px){
+  .hero__brand{gap:.8rem}
+  .hero__brand__sub{letter-spacing:.16em;line-height:1.5}
+}
 .hero h1{margin-bottom:clamp(1.4rem,2.6vw,2.2rem);max-width:16ch}
 .hero__row{display:flex;flex-wrap:wrap;gap:clamp(1.5rem,4vw,4rem);align-items:flex-end;justify-content:space-between}
 .hero__actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}
