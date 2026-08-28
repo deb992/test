@@ -148,4 +148,11 @@ Re-run any of these with the local server running.
 ```bash
 python3 tools/make_placeholders.py   # rebuild placeholder images (delete once real photos are in)
 python3 tools/fetch_fonts.py         # re-download webfonts (only if the type system changes)
+python3 tools/bundle_artifact.py     # bundle the whole site into one shareable HTML file
 ```
+
+`tools/bundle_artifact.py` writes `dist/juniors-chimney-preview.html` — every page,
+stylesheet, script, font and image inlined into a single file that opens by
+double-clicking, with no server and no internet connection. Handy for showing the
+site to someone before it is hosted. `dist/` is generated output and is not tracked
+in git; rebuild it any time with that command.

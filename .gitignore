@@ -4,3 +4,6 @@ node_modules/
 __pycache__/
 *.pyc
 package-lock.json
+
+# generated deliverables — rebuild with `python3 tools/bundle_artifact.py`
+dist/
